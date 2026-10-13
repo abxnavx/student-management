@@ -1,38 +1,387 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: #f4f5fb;
+  color: #252641;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* ==============================
+   MAIN CONTAINER
+================================ */
+
+.container {
+  width: min(1200px, 94%);
+  margin: 45px auto;
+  padding: 35px;
+  background: #ffffff;
+  border: 1px solid #e9e9f2;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(38, 35, 85, 0.07);
+}
+
+/* ==============================
+   PAGE HEADING
+================================ */
+
+h1 {
+  position: relative;
+  margin: 0 0 35px;
+  padding-bottom: 22px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #242341;
+  border-bottom: 1px solid #ececf4;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 75px;
+  height: 4px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #7958ed, #a18aff);
+}
+
+/* ==============================
+   ADD STUDENT FORM
+================================ */
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 25px;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #faf9ff, #f7f8ff);
+  border: 1px solid #ece9fa;
+  border-radius: 15px;
+}
+
+form input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 15px;
+  color: #292744;
+  font-size: 13px;
+  background: #ffffff;
+  border: 1px solid #e1e1ed;
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input::placeholder {
+  color: #a5a4b8;
+}
+
+form input:focus {
+  border-color: #8566ed;
+  box-shadow: 0 0 0 4px rgba(121, 88, 237, 0.1);
+}
+
+/* ==============================
+   BUTTONS
+================================ */
+
+button {
+  padding: 11px 17px;
+  margin: 3px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7958ed, #6241d5);
+  box-shadow: 0 4px 10px rgba(101, 65, 213, 0.15);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #6947dd, #5232c0);
+  box-shadow: 0 7px 16px rgba(101, 65, 213, 0.22);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ==============================
+   SEARCH INPUT
+================================ */
+
+.search {
+  display: block;
+  width: 100%;
+  height: 49px;
+  padding: 0 17px;
+  margin-bottom: 22px;
+  color: #292744;
+  font-size: 13px;
+  background: #ffffff;
+  border: 1px solid #e4e4ef;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search::placeholder {
+  color: #a5a4b8;
+}
+
+.search:focus {
+  border-color: #8566ed;
+  box-shadow: 0 0 0 4px rgba(121, 88, 237, 0.09);
+}
+
+/* ==============================
+   STUDENT TABLE
+================================ */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e9e9f2;
+  border-radius: 12px;
+}
+
+/* Table heading */
+
+thead {
+  background: #f5f3ff;
+}
+
+th {
+  padding: 17px 15px;
+  color: #615a8d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e7e2fa;
+}
+
+/* Table data */
+
+td {
+  padding: 17px 15px;
+  color: #55546d;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f6;
+  transition: background 0.2s;
+}
+
+/* Alternate row colors */
+
+tbody tr:nth-child(even) {
+  background: #fafaff;
+}
+
+/* Hover effect */
+
+tbody tr:hover {
+  background: #f4f1ff;
+}
+
+/* Remove bottom border from final row */
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* No students message */
+
+td[colspan="5"] {
+  padding: 35px 15px;
+  color: #9694aa;
+  font-size: 14px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ==============================
+   EDIT INPUTS
+================================ */
+
+td input {
+  width: 100%;
+  min-width: 75px;
+  height: 38px;
+  padding: 0 10px;
+  color: #292744;
+  font-size: 12px;
+  background: #ffffff;
+  border: 1px solid #dcd7f5;
+  border-radius: 7px;
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+td input:focus {
+  border-color: #8566ed;
+  box-shadow: 0 0 0 3px rgba(121, 88, 237, 0.09);
+}
+
+/* ==============================
+   ACTION BUTTONS
+================================ */
+
+/* Edit button */
+
+td button:first-child {
+  background: #eee9ff;
+  color: #6845d4;
+  box-shadow: none;
+}
+
+td button:first-child:hover {
+  background: #dfd5ff;
+}
+
+/* Delete button */
+
+td button:last-child {
+  background: #fff0f1;
+  color: #d34d62;
+  box-shadow: none;
+}
+
+td button:last-child:hover {
+  background: #ffdee3;
+}
+
+/* Save button */
+
+td button:first-child:focus {
+  outline-color: #a28aff;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+  .container {
+    width: 96%;
+    padding: 25px;
+    margin: 25px auto;
+  }
+
+  form {
+    flex-wrap: wrap;
+  }
+
+  form input {
+    flex: 1 1 40%;
+  }
+
+  form button {
+    min-height: 45px;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  /* Allow horizontal scrolling for wide tables */
+
+  .container {
+    overflow-x: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  .container {
+    width: 96%;
+    padding: 18px 12px;
+    margin: 15px auto;
+    border-radius: 14px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  form input {
+    flex: auto;
+    width: 100%;
+  }
+
+  form button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search {
+    height: 45px;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  th,
+  td {
+    padding: 13px 10px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  td button {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+}
+
+/* ==============================
+   ACCESSIBILITY
+================================ */
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(121, 88, 237, 0.3);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }
